@@ -19,8 +19,5 @@ jobs:
         with:
           node-version: '18.x' # You can change this to your preferred Node.js version.
 
-      - name: Install dependencies (if any)
-        run: npm install
-
       - name: Run tests
         run: node test.js
