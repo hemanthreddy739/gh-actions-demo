@@ -6,20 +6,21 @@ on:
   pull_request:
     branches: [ main ]
 
-jobs:
-build-and-test:
-runs-on: ubuntu-latest
-  steps:
-  - name: Checkout repository
-    uses: actions/checkout@v3
+jobs: 
+  build-and-test:
+    runs-on: ubuntu-latest
 
-  - name: Set up Node.js
-    uses: actions/setup-node@v3
-    with:
-      node-version: '18.x' # You can change this to your preferred Node.js version.
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-  - name: Install dependencies (if any)
-    run: npm install
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x' # You can change this to your preferred Node.js version.
 
-  - name: Run tests
-    run: node test.js
+      - name: Install dependencies (if any)
+        run: npm install
+
+      - name: Run tests
+        run: node test.js
